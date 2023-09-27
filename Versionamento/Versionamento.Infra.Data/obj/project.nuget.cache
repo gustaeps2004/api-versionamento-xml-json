@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SyJHDiJKJ0GSIcPt9GeufwTPTM365fdp2XNeXtDr1/hNDirFHgGV8D5vzzD7Ek8fAVdLAnWFEWlI60MTcpKS1Q==",
+  "dgSpecHash": "PkxmAy3Vb4t9tsZF3M9d2s8IsRKrIaBDRAJ67bbmvIqaslmYa8/rpcpUGFFD/OJUPeiVs2HHzZk7b2rZqfDdnQ==",
   "success": true,
   "projectFilePath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
   "expectedPackageFiles": [

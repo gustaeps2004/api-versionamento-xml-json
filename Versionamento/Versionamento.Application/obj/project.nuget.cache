@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+vz9cdPt+0LeuV1T6GgHvzuYaMnauwPj4+LTII7NH3COUXLiEzjc8ZRHy7ewhyn3RP952OAI+YlhwdTBYw6uDw==",
+  "dgSpecHash": "eNtiENjIVSvuC0+vcNNr3iGzjpaI4eyfiwPdVJHghxJMEXLga8A6cQZxsOGFFf9pPN820kCJm3fujLzznjnlDA==",
   "success": true,
   "projectFilePath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dev\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Dev\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
