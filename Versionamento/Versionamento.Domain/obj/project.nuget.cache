@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lZbKj9u17RHwSLiXX8RoMGzMRn5KOlCc4+ln/kBhXgzFxj7WWctBkWianRX/9LDh4QMeMYG8fticI60+Cc/SCw==",
+  "dgSpecHash": "wGQXSSFZ/AMGAw7YuicsjTVEo4O5PMOPH3LMgBb0Py9hX0C8sLTgytgmd7ixqvDHA8JzzaecUrfNxnxpbsx2YA==",
   "success": true,
-  "projectFilePath": "C:\\temp\\APIVersionamento\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
+  "projectFilePath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
