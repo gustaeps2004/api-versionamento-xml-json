@@ -1,0 +1,5 @@
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\obj\Debug\net6.0\Versionamento.Infra.Data.csproj.AssemblyReference.cache
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\obj\Debug\net6.0\Versionamento.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\obj\Debug\net6.0\Versionamento.Infra.Data.AssemblyInfoInputs.cache
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\obj\Debug\net6.0\Versionamento.Infra.Data.AssemblyInfo.cs
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\obj\Debug\net6.0\Versionamento.Infra.Data.csproj.CoreCompileInputs.cache

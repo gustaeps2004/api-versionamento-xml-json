@@ -1,0 +1,11 @@
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\bin\Debug\net6.0\Versionamento.Application.deps.json
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\bin\Debug\net6.0\Versionamento.Application.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\bin\Debug\net6.0\Versionamento.Application.pdb
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.AssemblyInfoInputs.cache
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.AssemblyInfo.cs
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.csproj.CoreCompileInputs.cache
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\refint\Versionamento.Application.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\Versionamento.Application.pdb
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Application\obj\Debug\net6.0\ref\Versionamento.Application.dll

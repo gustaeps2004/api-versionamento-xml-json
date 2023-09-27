@@ -1,0 +1,43 @@
+﻿using Versionamento.Domain.Entities;
+using Versionamento.Domain.Interfaces;
+using Versionamento.Infra.Data.Context;
+
+namespace Versionamento.Infra.Data.Repositories
+{
+    public class UsuarioRepository : IUsuarioRepository
+    {
+        private readonly ApplicationDbContext _context;
+
+        public UsuarioRepository(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Usuarios>> GetAll()
+        {
+            return await _context.Usuarios.ToListAsync();  
+        }
+
+        public Task<Usuarios> GetByCodigo(Guid codigo)
+        {
+            throw new NotImplementedException();
+        }        
+
+        public Task CriarUsuario(Usuarios usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AtualizarUsuario(Usuarios usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeletarUsuario(Guid codigo)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+    }
+}

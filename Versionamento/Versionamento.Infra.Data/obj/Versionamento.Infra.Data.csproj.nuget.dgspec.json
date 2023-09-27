@@ -4,14 +4,14 @@
     "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {}
   },
   "projects": {
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
+    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
-        "projectName": "Versionamento.Infra.Data",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
+        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
+        "projectName": "Versionamento.Domain",
+        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
         "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\obj\\",
+        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,81 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
+        "projectName": "Versionamento.Infra.Data",
+        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
+                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
