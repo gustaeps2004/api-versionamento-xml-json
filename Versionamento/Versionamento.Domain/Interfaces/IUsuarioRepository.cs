@@ -8,7 +8,7 @@ namespace Versionamento.Domain.Interfaces
         Task<Usuarios> GetByCodigo(Guid codigo);
 
         Task CriarUsuario(Usuarios usuario);
-        Task AtualizarUsuario(Usuarios usuario);
+        Task AtualizarUsuario(Usuarios usuario, Guid codigo);
         Task DeletarUsuario(Guid codigo);
     }
 }

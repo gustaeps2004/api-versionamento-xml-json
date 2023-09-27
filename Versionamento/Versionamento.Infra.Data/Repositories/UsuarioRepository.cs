@@ -1,4 +1,5 @@
-﻿using Versionamento.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Versionamento.Domain.Entities;
 using Versionamento.Domain.Interfaces;
 using Versionamento.Infra.Data.Context;
 
@@ -18,26 +19,38 @@ namespace Versionamento.Infra.Data.Repositories
             return await _context.Usuarios.ToListAsync();  
         }
 
-        public Task<Usuarios> GetByCodigo(Guid codigo)
+        public async Task<Usuarios> GetByCodigo(Guid codigo)
         {
-            throw new NotImplementedException();
+            return await _context.Usuarios.FirstOrDefaultAsync(x => x.Codigo == codigo);
         }        
 
-        public Task CriarUsuario(Usuarios usuario)
+        public async Task CriarUsuario(Usuarios usuario)
         {
-            throw new NotImplementedException();
+            string sql = "INSERT INTO Usuarios (Codigo, Nome, DocumentoFederal, DtNasc)"
+                      + $"VALUES (NEWID(), {usuario.Nome}, {usuario.DocumentoFederal}, {usuario.DtNasc.ToString("yyyy-MM-dd")});";
+
+            _context.Usuarios.FromSqlRaw(sql);
+            await _context.SaveChangesAsync();
         }
 
-        public Task AtualizarUsuario(Usuarios usuario)
+        public async Task AtualizarUsuario(Usuarios usuario, Guid codigo)
         {
-            throw new NotImplementedException();
+            string sql = "UPDATE Usuarios SET"
+                       + $"Nome = {usuario.Nome}"
+                       + $"DtNasc = {usuario.DtNasc.ToString("yyyy-MM-dd")}"
+                       + $"WHERE Codigo = {codigo};";
+
+            _context.Usuarios.FromSqlRaw(sql);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeletarUsuario(Guid codigo)
+        public async Task DeletarUsuario(Guid codigo)
         {
-            throw new NotImplementedException();
-        }
+            string sql = "DELETE FROM Usuarios"
+                     + $"WHERE Codigo = {codigo};";
 
-        
+            _context.Usuarios.FromSqlRaw(sql);
+            await _context.SaveChangesAsync();
+        }
     }
 }
