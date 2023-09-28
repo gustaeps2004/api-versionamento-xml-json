@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Xml.Serialization;
 using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 
@@ -59,15 +60,13 @@ namespace Versionamento.API.Controllers
 
 
         [HttpPost("CriarUsuario")]
-        public async Task<ActionResult> CriarUsuarios(object usuarioDto)
+        public async Task<ActionResult> CriarUsuarios()
         {
             try
             {
-                if(usuarioDto is null)
-                    return BadRequest();
 
                 string accept = Request.Headers.Accept.ToString();
-                await _services.CriarUsuario(usuarioDto, accept);
+                await _services.CriarUsuario(Request.Body, accept);
 
                 return Ok();
 

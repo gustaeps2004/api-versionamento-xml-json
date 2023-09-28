@@ -65,7 +65,8 @@ namespace Versionamento.Application.Services
             }
             else
             {
-                
+                var teste = usuariosDto;
+                Console.WriteLine(teste);
             }
 
         }
