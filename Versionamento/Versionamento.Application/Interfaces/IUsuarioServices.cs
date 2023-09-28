@@ -2,7 +2,7 @@
 
 namespace Versionamento.Application.Interfaces
 {
-    public interface IUsuarioRepository
+    public interface IUsuarioServices
     {
         Task<IEnumerable<UsuariosDto>> GetAll();
         Task<UsuariosDto> GetByCodigo(Guid codigo);
