@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Newtonsoft.Json;
+using System.Xml.Linq;
 using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 using Versionamento.Domain.Entities;
@@ -17,14 +19,31 @@ namespace Versionamento.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<UsuariosDto>> GetAll()
+        public async Task<IEnumerable<UsuariosDto>> GetAll(string typeFormat)
         {
-            return _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());            
+            var usuarios = _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());
+
+            if(typeFormat != "application/xml")
+            {
+                return usuarios;
+            }
+            return usuarios;
+            //XNode node = JsonConvert.DeserializeXNode(usuarios, "root");
+
         }
 
-        public async Task<UsuariosDto> GetByCodigo(Guid codigo)
+        public async Task<UsuariosDto> GetByCodigo(Guid codigo, string typeFormat)
         {
-            return _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo));
+            var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo));
+
+            if (typeFormat != "application/xml")
+            {
+                return usuario;
+            }
+
+            XNode node = JsonConvert.DeserializeXNode(JsonConvert.SerializeObject(usuario), "usuario");
+
+            return usuario;
         }
 
         public async Task CriarUsuario(UsuariosDto usuariosDto)
