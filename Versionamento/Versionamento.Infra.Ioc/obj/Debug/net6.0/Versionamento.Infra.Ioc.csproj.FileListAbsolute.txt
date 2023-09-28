@@ -9,3 +9,11 @@ C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Version
 C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\obj\Debug\net6.0\refint\Versionamento.Infra.Ioc.dll
 C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\obj\Debug\net6.0\Versionamento.Infra.Ioc.pdb
 C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\obj\Debug\net6.0\ref\Versionamento.Infra.Ioc.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Application.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Domain.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Infra.Data.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Application.pdb
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Domain.pdb
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\bin\Debug\net6.0\Versionamento.Infra.Data.pdb
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\obj\Debug\net6.0\Versionamento.Infra.Ioc.csproj.AssemblyReference.cache
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Ioc\obj\Debug\net6.0\Versionamento.Infra.Ioc.csproj.CopyComplete

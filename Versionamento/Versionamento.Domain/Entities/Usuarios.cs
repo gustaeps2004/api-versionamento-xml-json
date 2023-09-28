@@ -28,14 +28,14 @@ namespace Versionamento.Domain.Entities
             DomainExceptionValidation.When(nome.Length <= 0 || nome.Length > 255, 
                 "Nome não pode ser menor ou igual a zero e nem maior que 255 caracteres.");
 
-            DomainExceptionValidation.When(string.IsNullOrEmpty(DocumentoFederal), 
+            DomainExceptionValidation.When(string.IsNullOrEmpty(documentoFederal), 
                 "Documento federal é obrigatório.");
 
-            DomainExceptionValidation.When(DocumentoFederal.Length != 11 || DocumentoFederal.Length != 14, 
+            DomainExceptionValidation.When(documentoFederal.Length != 11 && documentoFederal.Length != 14, 
                 "Documento federal tem que conter 11 caracteres para cpf ou 14 para cnpj");
 
             Regex regex = new Regex(@"^\d{4}-\d{2}-\d{2}$");
-            DomainExceptionValidation.When(regex.IsMatch(dtNasc.ToString("yyyy-MM-dd")), 
+            DomainExceptionValidation.When(!regex.IsMatch(dtNasc.ToString("yyyy-MM-dd")), 
                 "Data inválida");
         }
     }

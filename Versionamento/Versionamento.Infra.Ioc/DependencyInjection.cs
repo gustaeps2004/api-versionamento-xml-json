@@ -16,7 +16,8 @@ namespace Versionamento.Infra.Ioc
             IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                    options.UseSqlServer(configuration.GetConnectionString("VersionamentoAPI")));
+                    options.UseSqlServer(configuration.GetConnectionString("VersionamentoAPI"),
+                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IUsuarioServices, UsuarioServices>();

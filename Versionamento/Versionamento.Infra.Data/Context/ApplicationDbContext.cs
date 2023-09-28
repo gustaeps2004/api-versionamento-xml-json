@@ -9,5 +9,10 @@ namespace Versionamento.Infra.Data.Context
         { }
 
         public DbSet<Usuarios> Usuarios { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Usuarios>().HasKey(x => x.Codigo);
+        }
     }
 }
