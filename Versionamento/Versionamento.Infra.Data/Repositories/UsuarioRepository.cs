@@ -24,33 +24,26 @@ namespace Versionamento.Infra.Data.Repositories
             return await _context.Usuarios.FirstOrDefaultAsync(x => x.Codigo == codigo);
         }        
 
-        public async Task CriarUsuario(Usuarios usuario)
+        public void CriarUsuario(Usuarios usuario)
         {
-            string sql = "INSERT INTO Usuarios (Codigo, Nome, DocumentoFederal, DtNasc)"
-                      + $"VALUES (NEWID(), {usuario.Nome}, {usuario.DocumentoFederal}, {usuario.DtNasc.ToString("yyyy-MM-dd")});";
+            string sql = "INSERT INTO [Usuarios] (Codigo, Nome, DocumentoFederal, DtNasc)"
+                + $" VALUES ('{Guid.NewGuid()}', '{usuario.Nome}', "
+                + $"'{usuario.DocumentoFederal}', '{usuario.DtNasc.ToString("yyyy-MM-dd")}');";
 
-            _context.Usuarios.FromSqlRaw(sql);
-            await _context.SaveChangesAsync();
+            _context.Database.ExecuteSqlRaw(sql);
         }
 
-        public async Task AtualizarUsuario(Usuarios usuario, Guid codigo)
+        public void AtualizarUsuario(Usuarios usuario, Guid codigo)
         {
-            string sql = "UPDATE Usuarios SET"
-                       + $"Nome = {usuario.Nome}"
-                       + $"DtNasc = {usuario.DtNasc.ToString("yyyy-MM-dd")}"
-                       + $"WHERE Codigo = {codigo};";
-
-            _context.Usuarios.FromSqlRaw(sql);
-            await _context.SaveChangesAsync();
+            //_context.Usuarios.Update(usuario);
         }
 
-        public async Task DeletarUsuario(Guid codigo)
+        public void DeletarUsuario(Guid codigo)
         {
             string sql = "DELETE FROM Usuarios"
                      + $"WHERE Codigo = {codigo};";
 
             _context.Usuarios.FromSqlRaw(sql);
-            await _context.SaveChangesAsync();
         }
     }
 }

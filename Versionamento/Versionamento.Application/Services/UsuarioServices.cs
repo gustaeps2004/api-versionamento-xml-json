@@ -31,17 +31,14 @@ namespace Versionamento.Application.Services
                 return usuarios;
             }
 
-            XmlDocument usuariosXml = new XmlDocument();
+            XmlDocument usuariosXml = new();
             
-            using (var reader = JsonReaderWriterFactory
-                .CreateJsonReader(Encoding.UTF8
+            using (var reader = JsonReaderWriterFactory.CreateJsonReader(Encoding.UTF8
                 .GetBytes(JsonConvert.SerializeObject(usuarios)), XmlDictionaryReaderQuotas.Max))
             {
                 XElement xml = XElement.Load(reader);
                 usuariosXml.LoadXml(xml.ToString());
 
-                
-                
                 return usuariosXml.InnerXml;
             }
         }
@@ -59,19 +56,30 @@ namespace Versionamento.Application.Services
             return usuarioXml.Document;
         }
 
-        public async Task CriarUsuario(UsuariosDto usuariosDto)
+        public async Task CriarUsuario(object usuariosDto, string accept)
         {
-            await _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuariosDto));
+            if (accept != "application/xml")
+            {
+                var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
+                _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(newUsuariosDto));
+            }
+            else
+            {
+                
+            }
+
         }
 
-        public async Task AtualizarUsuario(UsuariosDto usuariosDto, Guid codigo)
+
+
+        public async Task AtualizarUsuario(object usuariosDto, Guid codigo, string accept)
         {
-            await _usuarioRepository.AtualizarUsuario(_mapper.Map<Usuarios>(usuariosDto), codigo);
+            _usuarioRepository.AtualizarUsuario(_mapper.Map<Usuarios>(usuariosDto), codigo);
         }        
 
-        public async Task DeletarUsuario(Guid codigo)
+        public async Task DeletarUsuario(Guid codigo, string accept)
         {
-            await _usuarioRepository.DeletarUsuario(codigo);
+            _usuarioRepository.DeletarUsuario(codigo);
         }
     }
 }

@@ -7,8 +7,8 @@ namespace Versionamento.Domain.Interfaces
         Task<IEnumerable<Usuarios>> GetAll();
         Task<Usuarios> GetByCodigo(Guid codigo);
 
-        Task CriarUsuario(Usuarios usuario);
-        Task AtualizarUsuario(Usuarios usuario, Guid codigo);
-        Task DeletarUsuario(Guid codigo);
+        void CriarUsuario(Usuarios usuario);
+        void AtualizarUsuario(Usuarios usuario, Guid codigo);
+        void DeletarUsuario(Guid codigo);
     }
 }

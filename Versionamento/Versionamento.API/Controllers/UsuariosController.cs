@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 
 namespace Versionamento.API.Controllers
@@ -35,6 +36,7 @@ namespace Versionamento.API.Controllers
             }
         }
 
+
         [HttpGet("GetByCodigo/{codigo:Guid}")]
         public async Task<ActionResult<Object>> GetAll(Guid codigo)
         {
@@ -47,6 +49,27 @@ namespace Versionamento.API.Controllers
                     return BadRequest();
 
                 return Ok(accept != "application/xml" ? usuario : usuario.ToString());
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpPost("CriarUsuario")]
+        public async Task<ActionResult> CriarUsuarios(object usuarioDto)
+        {
+            try
+            {
+                if(usuarioDto is null)
+                    return BadRequest();
+
+                string accept = Request.Headers.Accept.ToString();
+                await _services.CriarUsuario(usuarioDto, accept);
+
+                return Ok();
 
             }
             catch (Exception ex)
