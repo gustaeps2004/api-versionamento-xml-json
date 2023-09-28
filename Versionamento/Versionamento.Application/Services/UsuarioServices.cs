@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Newtonsoft.Json;
+using System.Runtime.Serialization.Json;
+using System.Text;
 using System.Xml.Linq;
+using System.Xml;
 using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 using Versionamento.Domain.Entities;
@@ -19,31 +22,41 @@ namespace Versionamento.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<UsuariosDto>> GetAll(string typeFormat)
+        public async Task<Object> GetAll(string accept)
         {
             var usuarios = _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());
 
-            if(typeFormat != "application/xml")
+            if(accept != "application/xml")
             {
                 return usuarios;
             }
-            return usuarios;
-            //XNode node = JsonConvert.DeserializeXNode(usuarios, "root");
 
+            XmlDocument usuariosXml = new XmlDocument();
+            
+            using (var reader = JsonReaderWriterFactory
+                .CreateJsonReader(Encoding.UTF8
+                .GetBytes(JsonConvert.SerializeObject(usuarios)), XmlDictionaryReaderQuotas.Max))
+            {
+                XElement xml = XElement.Load(reader);
+                usuariosXml.LoadXml(xml.ToString());
+
+                
+                
+                return usuariosXml.InnerXml;
+            }
         }
 
-        public async Task<UsuariosDto> GetByCodigo(Guid codigo, string typeFormat)
+        public async Task<Object> GetByCodigo(Guid codigo, string accept)
         {
             var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo));
 
-            if (typeFormat != "application/xml")
+            if (accept != "application/xml")
             {
                 return usuario;
             }
 
-            XNode node = JsonConvert.DeserializeXNode(JsonConvert.SerializeObject(usuario), "usuario");
-
-            return usuario;
+            var usuarioXml = JsonConvert.DeserializeXNode(JsonConvert.SerializeObject(usuario), "usuarios");
+            return usuarioXml.Document;
         }
 
         public async Task CriarUsuario(UsuariosDto usuariosDto)
@@ -59,6 +72,6 @@ namespace Versionamento.Application.Services
         public async Task DeletarUsuario(Guid codigo)
         {
             await _usuarioRepository.DeletarUsuario(codigo);
-        }        
+        }
     }
 }

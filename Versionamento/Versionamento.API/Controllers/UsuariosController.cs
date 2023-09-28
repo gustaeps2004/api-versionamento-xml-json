@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 
 namespace Versionamento.API.Controllers
@@ -17,7 +16,7 @@ namespace Versionamento.API.Controllers
 
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<IEnumerable<UsuariosDto>>> GetAll()
+        public async Task<ActionResult<Object>> GetAll()
         {
             try
             {
@@ -37,17 +36,17 @@ namespace Versionamento.API.Controllers
         }
 
         [HttpGet("GetByCodigo/{codigo:Guid}")]
-        public async Task<ActionResult<IEnumerable<UsuariosDto>>> GetAll(Guid codigo)
+        public async Task<ActionResult<Object>> GetAll(Guid codigo)
         {
             try
             {
-                string typeFormat = Request.Headers.Accept.ToString();
+                string accept = Request.Headers.Accept.ToString();
 
-                var usuario = await _services.GetByCodigo(codigo, typeFormat);
+                var usuario = await _services.GetByCodigo(codigo, accept);
                 if (usuario is null)
                     return BadRequest();
 
-                return Ok(usuario);
+                return Ok(accept != "application/xml" ? usuario : usuario.ToString());
 
             }
             catch (Exception ex)
