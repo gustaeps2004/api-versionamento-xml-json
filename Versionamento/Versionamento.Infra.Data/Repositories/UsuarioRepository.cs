@@ -33,10 +33,10 @@ namespace Versionamento.Infra.Data.Repositories
             _context.Database.ExecuteSqlRaw(sql);
         }
 
-        public void AtualizarUsuario(Usuarios usuario, Guid codigo)
+        public void AtualizarUsuario(string nome, string dtNasc, Guid codigo)
         {
             string sql = "UPDATE Usuarios SET"
-                        + $" Nome = '{usuario.Nome}', DtNasc = '{usuario.DtNasc.ToString("yyyy-MM-dd")}'"
+                        + $" Nome = '{nome}', DtNasc = '{dtNasc}'"
                         + $" WHERE Codigo = '{codigo}'";
 
             _context.Database.ExecuteSqlRaw(sql);

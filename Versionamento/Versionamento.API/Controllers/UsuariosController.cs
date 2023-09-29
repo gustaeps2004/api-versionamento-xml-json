@@ -78,6 +78,26 @@ namespace Versionamento.API.Controllers
         }
 
 
+        [HttpPut("AtualizarUsuario/{codigo:Guid}")]
+        public async Task<ActionResult> AtualizarUsuario(Guid codigo)
+        {
+            try
+            {
+                string contentType = Request.Headers.ContentType.ToString();
+                using (var reader = new StreamReader(Request.Body))
+                {
+                    await _services.AtualizarUsuario(await reader.ReadToEndAsync(), codigo, contentType);
+                }
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
         [HttpDelete("DeletarUsuario/{codigo:Guid}")]
         public async Task<ActionResult> DeletarUsuario(Guid codigo)
         {
