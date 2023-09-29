@@ -10,7 +10,7 @@ using Versionamento.Domain.Interfaces;
 using System.Xml.Serialization;
 using Versionamento.Application.Interfaces.V1;
 
-namespace Versionamento.Application.Services.V1
+namespace Versionamento.Application.Services.V2
 {
     public class UsuarioServices : IUsuarioServices
     {

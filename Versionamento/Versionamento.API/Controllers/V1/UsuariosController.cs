@@ -5,7 +5,7 @@ namespace Versionamento.API.Controllers.V1
 {
 
     [ApiController, ApiVersion("1")]
-    [Route("V1/[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioServices _usuariosServices;
