@@ -7,11 +7,11 @@ namespace Versionamento.API.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly IUsuarioServices _services;
+        private readonly IUsuarioServices _usuariosServices;
 
         public UsuariosController(IUsuarioServices services)
         {
-            _services = services;
+            _usuariosServices = services;
         }
 
 
@@ -22,7 +22,7 @@ namespace Versionamento.API.Controllers
             {
                 string contentType = Request.Headers.ContentType.ToString();
 
-                var usuarios = await _services.GetAll(contentType);
+                var usuarios = await _usuariosServices.GetAll(contentType);
                 if (usuarios is null)
                     return BadRequest();
 
@@ -43,7 +43,7 @@ namespace Versionamento.API.Controllers
             {
                 string contentType = Request.Headers.ContentType.ToString();
 
-                var usuario = await _services.GetByCodigo(codigo, contentType);
+                var usuario = await _usuariosServices.GetByCodigo(codigo, contentType);
                 if (usuario is null)
                     return BadRequest();
 
@@ -65,8 +65,8 @@ namespace Versionamento.API.Controllers
                 string contentType = Request.Headers.ContentType.ToString();
                 using (var reader = new StreamReader(Request.Body))
                 {
-                    await _services.CriarUsuario(await reader.ReadToEndAsync(), contentType);
-                }                                               
+                    await _usuariosServices.CriarUsuario(await reader.ReadToEndAsync(), contentType);
+                }
 
                 return Ok();
 
@@ -86,7 +86,7 @@ namespace Versionamento.API.Controllers
                 string contentType = Request.Headers.ContentType.ToString();
                 using (var reader = new StreamReader(Request.Body))
                 {
-                    await _services.AtualizarUsuario(await reader.ReadToEndAsync(), codigo, contentType);
+                    await _usuariosServices.AtualizarUsuario(await reader.ReadToEndAsync(), codigo, contentType);
                 }
 
                 return Ok();
@@ -103,7 +103,7 @@ namespace Versionamento.API.Controllers
         {
             try
             {
-                await _services.DeletarUsuario(codigo);
+                await _usuariosServices.DeletarUsuario(codigo);
                 return Ok();
             }
             catch (Exception ex)
