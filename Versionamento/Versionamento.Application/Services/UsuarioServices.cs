@@ -8,6 +8,7 @@ using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces;
 using Versionamento.Domain.Entities;
 using Versionamento.Domain.Interfaces;
+using System.Xml.Serialization;
 
 namespace Versionamento.Application.Services
 {
@@ -22,11 +23,11 @@ namespace Versionamento.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<Object> GetAll(string accept)
+        public async Task<Object> GetAll(string contentType)
         {
             var usuarios = _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());
 
-            if(accept != "application/xml")
+            if(contentType != "application/xml")
             {
                 return usuarios;
             }
@@ -43,11 +44,11 @@ namespace Versionamento.Application.Services
             }
         }
 
-        public async Task<Object> GetByCodigo(Guid codigo, string accept)
+        public async Task<Object> GetByCodigo(Guid codigo, string contentType)
         {
             var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo));
 
-            if (accept != "application/xml")
+            if (contentType != "application/xml")
             {
                 return usuario;
             }
@@ -56,29 +57,33 @@ namespace Versionamento.Application.Services
             return usuarioXml.Document;
         }
 
-        public async Task CriarUsuario(object usuariosDto, string accept)
+        public async Task CriarUsuario(string usuariosDto, string contentType)
         {
-            if (accept != "application/xml")
+            if (contentType != "application/xml")
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
                 _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(newUsuariosDto));
             }
             else
             {
-                var teste = usuariosDto;
-                Console.WriteLine(teste);
+                XmlSerializer serializer = new(typeof(UsuariosDto));
+                using (TextReader reader = new StringReader(usuariosDto))
+                {
+                    UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
+                    _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuarioXmlToJson));
+                }
             }
 
         }
 
 
 
-        public async Task AtualizarUsuario(object usuariosDto, Guid codigo, string accept)
+        public async Task AtualizarUsuario(object usuariosDto, Guid codigo, string contentType)
         {
             _usuarioRepository.AtualizarUsuario(_mapper.Map<Usuarios>(usuariosDto), codigo);
         }        
 
-        public async Task DeletarUsuario(Guid codigo, string accept)
+        public async Task DeletarUsuario(Guid codigo, string contentType)
         {
             _usuarioRepository.DeletarUsuario(codigo);
         }

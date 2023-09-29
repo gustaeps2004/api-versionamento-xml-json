@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Xml.Serialization;
-using Versionamento.Application.DTOs;
+using System.Xml.Linq;
 using Versionamento.Application.Interfaces;
 
 namespace Versionamento.API.Controllers
@@ -22,9 +21,9 @@ namespace Versionamento.API.Controllers
         {
             try
             {
-                string typeFormat = Request.Headers.Accept.ToString();
+                string contentType = Request.Headers.ContentType.ToString();
 
-                var usuarios = await _services.GetAll(typeFormat);
+                var usuarios = await _services.GetAll(contentType);
                 if (usuarios is null)
                     return BadRequest();
 
@@ -43,13 +42,13 @@ namespace Versionamento.API.Controllers
         {
             try
             {
-                string accept = Request.Headers.Accept.ToString();
+                string contentType = Request.Headers.ContentType.ToString();
 
-                var usuario = await _services.GetByCodigo(codigo, accept);
+                var usuario = await _services.GetByCodigo(codigo, contentType);
                 if (usuario is null)
                     return BadRequest();
 
-                return Ok(accept != "application/xml" ? usuario : usuario.ToString());
+                return Ok(contentType != "application/xml" ? usuario : usuario.ToString());
 
             }
             catch (Exception ex)
@@ -60,13 +59,15 @@ namespace Versionamento.API.Controllers
 
 
         [HttpPost("CriarUsuario")]
-        public async Task<ActionResult> CriarUsuarios()
+        public async Task<ActionResult> CriarUsuario()
         {
             try
             {
-
-                string accept = Request.Headers.Accept.ToString();
-                await _services.CriarUsuario(Request.Body, accept);
+                string contentType = Request.Headers.ContentType.ToString();
+                using (var reader = new StreamReader(Request.Body))
+                {
+                    await _services.CriarUsuario(await reader.ReadToEndAsync(), contentType);
+                }                                               
 
                 return Ok();
 

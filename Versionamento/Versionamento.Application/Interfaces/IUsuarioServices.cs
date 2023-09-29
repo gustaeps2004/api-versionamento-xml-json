@@ -4,11 +4,11 @@ namespace Versionamento.Application.Interfaces
 {
     public interface IUsuarioServices
     {
-        Task<Object> GetAll(string accept);
-        Task<Object> GetByCodigo(Guid codigo, string accept);
+        Task<Object> GetAll(string contentType);
+        Task<Object> GetByCodigo(Guid codigo, string contentType);
 
-        Task CriarUsuario(object usuariosDto, string accept);
-        Task AtualizarUsuario(object usuariosDto, Guid codigo, string accept);
-        Task DeletarUsuario(Guid codigo, string accept);
+        Task CriarUsuario(string usuariosDto, string contentType);
+        Task AtualizarUsuario(object usuariosDto, Guid codigo, string contentType);
+        Task DeletarUsuario(Guid codigo, string contentType);
     }
 }
