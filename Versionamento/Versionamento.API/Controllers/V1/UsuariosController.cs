@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Versionamento.Application.Interfaces;
+using Versionamento.Application.Interfaces.V1;
 
 namespace Versionamento.API.Controllers.V1
 {
 
     [ApiController, ApiVersion("1")]
-    [Route("V{version:apiVersion}/[controller]")]
+    [Route("V1/[controller]")]
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioServices _usuariosServices;

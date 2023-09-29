@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Versionamento.Application.Interfaces;
+using Versionamento.Application.Interfaces.V1;
 using Versionamento.Application.Mappings;
 using Versionamento.Application.Services.V1;
 using Versionamento.Domain.Interfaces;
