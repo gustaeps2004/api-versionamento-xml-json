@@ -77,10 +77,19 @@ namespace Versionamento.API.Controllers
             }
         }
 
+
         [HttpDelete("DeletarUsuario/{codigo:Guid}")]
         public async Task<ActionResult> DeletarUsuario(Guid codigo)
         {
-
+            try
+            {
+                await _services.DeletarUsuario(codigo);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

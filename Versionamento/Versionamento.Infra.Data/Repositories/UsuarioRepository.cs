@@ -45,7 +45,7 @@ namespace Versionamento.Infra.Data.Repositories
         public void DeletarUsuario(Guid codigo)
         {
             string sql = "DELETE FROM Usuarios"
-                     + $"WHERE Codigo = {codigo};";
+                     + $" WHERE Codigo = '{codigo}';";
 
             _context.Database.ExecuteSqlRaw(sql);
         }

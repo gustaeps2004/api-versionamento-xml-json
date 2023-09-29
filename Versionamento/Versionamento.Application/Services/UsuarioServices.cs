@@ -46,7 +46,8 @@ namespace Versionamento.Application.Services
 
         public async Task<Object> GetByCodigo(Guid codigo, string contentType)
         {
-            var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo));
+            var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo)) ?? 
+                throw new Exception("Usuário não encontrado");
 
             if (contentType != "application/xml")
             {
@@ -82,6 +83,9 @@ namespace Versionamento.Application.Services
 
         public async Task DeletarUsuario(Guid codigo)
         {
+            if(await _usuarioRepository.GetByCodigo(codigo) is null) 
+                throw new Exception("Usuário não encontrado");
+
             _usuarioRepository.DeletarUsuario(codigo);
         }
     }
