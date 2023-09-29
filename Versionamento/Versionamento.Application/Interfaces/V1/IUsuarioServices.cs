@@ -1,6 +1,4 @@
-﻿using Versionamento.Application.DTOs;
-
-namespace Versionamento.Application.Interfaces.V1
+﻿namespace Versionamento.Application.Interfaces.V1
 {
     public interface IUsuarioServices
     {
