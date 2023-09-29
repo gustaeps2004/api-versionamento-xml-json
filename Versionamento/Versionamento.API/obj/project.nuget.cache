@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Mflcyh2Xy7SgByhcv4WI2w0E1WJmWBMEB2g/5bZ07ylGN5nqX5s+7rfvfgF+CB5qYCHggTL2kgrkAT4hwcwYNQ==",
+  "dgSpecHash": "V2lX6pHlhVW8ItzYqUq0KZ4XnJMwGUQrsodafp9EfH+Nr7db6Fm+soS+Bh8F6Oy1XlQb9fXOlxQwvlVyo+VBKA==",
   "success": true,
   "projectFilePath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dev\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Dev\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Dev\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\Dev\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Dev\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Dev\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

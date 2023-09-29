@@ -22,7 +22,7 @@ namespace Versionamento.Application.Services
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;
         }
-
+        
         public async Task<Object> GetAll(string contentType)
         {
             var usuarios = _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());

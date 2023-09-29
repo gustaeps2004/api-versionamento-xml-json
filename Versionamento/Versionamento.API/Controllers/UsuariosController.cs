@@ -3,8 +3,10 @@ using Versionamento.Application.Interfaces;
 
 namespace Versionamento.API.Controllers
 {
+
     [Route("[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioServices _usuariosServices;
@@ -14,7 +16,7 @@ namespace Versionamento.API.Controllers
             _usuariosServices = services;
         }
 
-
+        
         [HttpGet("GetAll")]
         public async Task<ActionResult<Object>> GetAll()
         {
