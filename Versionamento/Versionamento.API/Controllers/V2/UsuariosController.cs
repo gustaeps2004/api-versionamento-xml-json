@@ -1,4 +1,4 @@
-﻿namespace Versionamento.API.V2
+﻿namespace Versionamento.API.Controllers.V2
 {
     public class UsuariosController
     {
