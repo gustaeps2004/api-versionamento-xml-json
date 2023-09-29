@@ -58,7 +58,7 @@ namespace Versionamento.Application.Services
         }
 
         public async Task CriarUsuario(string usuariosDto, string contentType)
-        {
+        {            
             if (contentType != "application/xml")
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
@@ -73,17 +73,14 @@ namespace Versionamento.Application.Services
                     _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuarioXmlToJson));
                 }
             }
-
         }
 
-
-
-        public async Task AtualizarUsuario(object usuariosDto, Guid codigo, string contentType)
+        public async Task AtualizarUsuario(string usuariosDto, Guid codigo, string contentType)
         {
             _usuarioRepository.AtualizarUsuario(_mapper.Map<Usuarios>(usuariosDto), codigo);
         }        
 
-        public async Task DeletarUsuario(Guid codigo, string contentType)
+        public async Task DeletarUsuario(Guid codigo)
         {
             _usuarioRepository.DeletarUsuario(codigo);
         }

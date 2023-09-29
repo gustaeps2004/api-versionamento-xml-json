@@ -35,7 +35,11 @@ namespace Versionamento.Infra.Data.Repositories
 
         public void AtualizarUsuario(Usuarios usuario, Guid codigo)
         {
-            //_context.Usuarios.Update(usuario);
+            string sql = "UPDATE Usuarios SET"
+                        + $" Nome = '{usuario.Nome}', DtNasc = '{usuario.DtNasc.ToString("yyyy-MM-dd")}'"
+                        + $" WHERE Codigo = '{codigo}'";
+
+            _context.Database.ExecuteSqlRaw(sql);
         }
 
         public void DeletarUsuario(Guid codigo)
@@ -43,7 +47,7 @@ namespace Versionamento.Infra.Data.Repositories
             string sql = "DELETE FROM Usuarios"
                      + $"WHERE Codigo = {codigo};";
 
-            _context.Usuarios.FromSqlRaw(sql);
+            _context.Database.ExecuteSqlRaw(sql);
         }
     }
 }

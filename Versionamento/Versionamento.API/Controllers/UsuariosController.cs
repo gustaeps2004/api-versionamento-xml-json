@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
 using Versionamento.Application.Interfaces;
 
 namespace Versionamento.API.Controllers
@@ -76,6 +75,12 @@ namespace Versionamento.API.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpDelete("DeletarUsuario/{codigo:Guid}")]
+        public async Task<ActionResult> DeletarUsuario(Guid codigo)
+        {
+
         }
     }
 }
