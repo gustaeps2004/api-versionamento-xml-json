@@ -7,18 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\**" />
     <Compile Remove="NewFolder1\**" />
-    <Compile Remove="NewFolder\**" />
-    <Content Remove="Controllers\**" />
     <Content Remove="NewFolder1\**" />
-    <Content Remove="NewFolder\**" />
-    <EmbeddedResource Remove="Controllers\**" />
     <EmbeddedResource Remove="NewFolder1\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
-    <None Remove="Controllers\**" />
     <None Remove="NewFolder1\**" />
-    <None Remove="NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +20,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Versionamento.Infra.Ioc\Versionamento.Infra.Ioc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
