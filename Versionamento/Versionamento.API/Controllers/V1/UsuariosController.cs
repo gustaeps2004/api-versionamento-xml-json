@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Versionamento.Application.Interfaces;
 
-namespace Versionamento.API.Controllers
+namespace Versionamento.API.Controllers.V1
 {
 
-    [Route("[controller]")]
-    [ApiController]
-    [ApiVersion("1.0")]
+    [ApiController, ApiVersion("1")]
+    [Route("V{version:apiVersion}/[controller]")]
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioServices _usuariosServices;
@@ -16,9 +15,9 @@ namespace Versionamento.API.Controllers
             _usuariosServices = services;
         }
 
-        
+
         [HttpGet("GetAll")]
-        public async Task<ActionResult<Object>> GetAll()
+        public async Task<ActionResult<object>> GetAll()
         {
             try
             {
@@ -39,7 +38,7 @@ namespace Versionamento.API.Controllers
 
 
         [HttpGet("GetByCodigo/{codigo:Guid}")]
-        public async Task<ActionResult<Object>> GetAll(Guid codigo)
+        public async Task<ActionResult<object>> GetAll(Guid codigo)
         {
             try
             {

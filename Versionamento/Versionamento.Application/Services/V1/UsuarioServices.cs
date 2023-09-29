@@ -10,7 +10,7 @@ using Versionamento.Domain.Entities;
 using Versionamento.Domain.Interfaces;
 using System.Xml.Serialization;
 
-namespace Versionamento.Application.Services
+namespace Versionamento.Application.Services.V1
 {
     public class UsuarioServices : IUsuarioServices
     {
@@ -22,18 +22,18 @@ namespace Versionamento.Application.Services
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;
         }
-        
-        public async Task<Object> GetAll(string contentType)
+
+        public async Task<object> GetAll(string contentType)
         {
             var usuarios = _mapper.Map<IEnumerable<UsuariosDto>>(await _usuarioRepository.GetAll());
 
-            if(contentType != "application/xml")
+            if (contentType != "application/xml")
             {
                 return usuarios;
             }
 
             XmlDocument usuariosXml = new();
-            
+
             using (var reader = JsonReaderWriterFactory.CreateJsonReader(Encoding.UTF8
                 .GetBytes(JsonConvert.SerializeObject(usuarios)), XmlDictionaryReaderQuotas.Max))
             {
@@ -44,9 +44,9 @@ namespace Versionamento.Application.Services
             }
         }
 
-        public async Task<Object> GetByCodigo(Guid codigo, string contentType)
+        public async Task<object> GetByCodigo(Guid codigo, string contentType)
         {
-            var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo)) ?? 
+            var usuario = _mapper.Map<UsuariosDto>(await _usuarioRepository.GetByCodigo(codigo)) ??
                 throw new Exception("Usuário não encontrado");
 
             if (contentType != "application/xml")
@@ -59,7 +59,7 @@ namespace Versionamento.Application.Services
         }
 
         public async Task CriarUsuario(string usuariosDto, string contentType)
-        {            
+        {
             if (contentType != "application/xml")
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
@@ -83,10 +83,10 @@ namespace Versionamento.Application.Services
 
             if (contentType != "application/xml")
             {
-                var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());           
+                var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
 
                 _usuarioRepository.AtualizarUsuario(
-                    newUsuariosDto.Nome, 
+                    newUsuariosDto.Nome,
                     newUsuariosDto.DtNasc.ToString("yyyy-MM-dd"),
                     codigo
                 );
@@ -104,11 +104,11 @@ namespace Versionamento.Application.Services
                     );
                 }
             }
-        }        
+        }
 
         public async Task DeletarUsuario(Guid codigo)
         {
-            if(await _usuarioRepository.GetByCodigo(codigo) is null) 
+            if (await _usuarioRepository.GetByCodigo(codigo) is null)
                 throw new Exception("Usuário não encontrado");
 
             _usuarioRepository.DeletarUsuario(codigo);

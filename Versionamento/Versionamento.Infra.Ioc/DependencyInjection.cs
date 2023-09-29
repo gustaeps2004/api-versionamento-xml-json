@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Versionamento.Application.Interfaces;
 using Versionamento.Application.Mappings;
-using Versionamento.Application.Services;
+using Versionamento.Application.Services.V1;
 using Versionamento.Domain.Interfaces;
 using Versionamento.Infra.Data.Context;
 using Versionamento.Infra.Data.Repositories;
