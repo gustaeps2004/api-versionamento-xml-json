@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5fMT2Yh5+KQU5V5Fm/lG3pjLUJigCRWVd187sjy5qCdfaw9wD2rKiIzgfaGN3TAVDbU6W83Ly3gDeBAKuDOJsw==",
+  "dgSpecHash": "LtgCBEs0FaJ/9fV4S75RBg/3STlFJmNtswp4MIGNespo+/QqxMN1XBbiq50rw8YmUCYaBumnrsGhd85yUDABGg==",
   "success": true,
   "projectFilePath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
