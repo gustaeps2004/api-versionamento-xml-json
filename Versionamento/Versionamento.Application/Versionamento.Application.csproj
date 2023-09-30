@@ -16,8 +16,4 @@
     <ProjectReference Include="..\Versionamento.Domain\Versionamento.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validation\Usuarios\" />
-  </ItemGroup>
-
 </Project>
