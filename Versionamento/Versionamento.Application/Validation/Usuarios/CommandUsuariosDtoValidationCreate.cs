@@ -5,7 +5,7 @@ using Versionamento.Application.Validation.Base;
 
 namespace Versionamento.Application.Validation.Usuarios
 {
-    public class CommandUsuariosDtoValidation : ValidacaoAbstrataBase<UsuariosDto>
+    public class CommandUsuariosDtoValidationCreate : ValidacaoAbstrataBase<UsuariosDto>
     {
         public override Task<ValidationResult> ValidateAsync(ValidationContext<UsuariosDto> context, CancellationToken cancellation = default)
         {

@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Xml.Serialization;
-
-namespace Versionamento.Application.DTOs
+﻿namespace Versionamento.Application.DTOs
 {
     public class UsuariosDto
     {        
