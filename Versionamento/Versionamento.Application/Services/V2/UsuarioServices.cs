@@ -8,6 +8,8 @@ using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces.V2;
 using Versionamento.Domain.Interfaces;
 using Versionamento.Application.Validation.Usuarios;
+using System.Xml.Serialization;
+using Versionamento.Domain.Entities;
 
 namespace Versionamento.Application.Services.V2
 {
@@ -15,11 +17,16 @@ namespace Versionamento.Application.Services.V2
     {
         private readonly IMapper _mapper;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly CommandUsuariosDtoValidationCreate _validationCreate;
+        private readonly CommandUsuariosDtoValidationUpdate _validationUpdate;   
 
-        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper)
+        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper, 
+            CommandUsuariosDtoValidationCreate validationCreate, CommandUsuariosDtoValidationUpdate validationUpdate)
         {
             _usuarioRepository = usuarioRepository;
             _mapper = mapper;
+            _validationCreate = validationCreate;
+            _validationUpdate = validationUpdate;
         }
 
         public async Task<object> GetAll(string contentType)
@@ -59,7 +66,24 @@ namespace Versionamento.Application.Services.V2
 
         public async Task CriarUsuario(string usuariosDto, string contentType)
         {
+            if (contentType != "application/xml")
+            {
+                var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
+                await _validationCreate.ValidateAsync(newUsuariosDto);
 
+                _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(newUsuariosDto));
+            }
+            else
+            {
+                XmlSerializer serializer = new(typeof(UsuariosDto));
+                using (TextReader reader = new StringReader(usuariosDto))
+                {
+                    UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
+                    await _validationCreate.ValidateAsync(usuarioXmlToJson);
+
+                    _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuarioXmlToJson));
+                }
+            }
         }
 
         public async Task AtualizarUsuario(string usuariosDto, Guid codigo, string contentType)

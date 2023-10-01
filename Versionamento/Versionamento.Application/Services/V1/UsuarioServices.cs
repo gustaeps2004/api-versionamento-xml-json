@@ -9,7 +9,6 @@ using Versionamento.Domain.Entities;
 using Versionamento.Domain.Interfaces;
 using System.Xml.Serialization;
 using Versionamento.Application.Interfaces.V1;
-using Versionamento.Application.Validation.Usuarios;
 
 namespace Versionamento.Application.Services.V1
 {

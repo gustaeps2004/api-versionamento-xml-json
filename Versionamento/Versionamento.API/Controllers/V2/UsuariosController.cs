@@ -56,5 +56,61 @@ namespace Versionamento.API.Controllers.V2
                 return BadRequest(ex.Message);
             }
         }
+
+
+        [HttpPost("CriarUsuario")]
+        public async Task<ActionResult> CriarUsuario()
+        {
+            try
+            {
+                string contentType = Request.Headers.ContentType.ToString();
+                using (var reader = new StreamReader(Request.Body))
+                {
+                    await _usuariosServices.CriarUsuario(await reader.ReadToEndAsync(), contentType);
+                }
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpPut("AtualizarUsuario/{codigo:Guid}")]
+        public async Task<ActionResult> AtualizarUsuario(Guid codigo)
+        {
+            try
+            {
+                string contentType = Request.Headers.ContentType.ToString();
+                using (var reader = new StreamReader(Request.Body))
+                {
+                    await _usuariosServices.AtualizarUsuario(await reader.ReadToEndAsync(), codigo, contentType);
+                }
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
+        [HttpDelete("DeletarUsuario/{codigo:Guid}")]
+        public async Task<ActionResult> DeletarUsuario(Guid codigo)
+        {
+            try
+            {
+                await _usuariosServices.DeletarUsuario(codigo);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
