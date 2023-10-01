@@ -156,3 +156,6 @@ C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\obj\Debug\net6.0\Versionamento.API.pdb
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\obj\Debug\net6.0\Versionamento.API.genruntimeconfig.cache
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\obj\Debug\net6.0\ref\Versionamento.API.dll
+C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.dll
+C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

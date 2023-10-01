@@ -23,6 +23,5 @@ namespace Versionamento.Application.Validation.Usuarios
 
             return ValidateAsync(context, cancellation);
         }
-    {
     }
 }
