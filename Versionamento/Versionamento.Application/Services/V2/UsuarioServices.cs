@@ -88,7 +88,33 @@ namespace Versionamento.Application.Services.V2
 
         public async Task AtualizarUsuario(string usuariosDto, Guid codigo, string contentType)
         {
+            if (await _usuarioRepository.GetByCodigo(codigo) is null)
+                throw new Exception("Usuário não encontrado");
 
+            if (contentType != "application/xml")
+            {
+                var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
+
+                _usuarioRepository.AtualizarUsuario(
+                    newUsuariosDto.Nome,
+                    newUsuariosDto.DtNasc.ToString("yyyy-MM-dd"),
+                    codigo
+                );
+            }
+            else
+            {
+                XmlSerializer serializer = new(typeof(UsuariosDto));
+                using (TextReader reader = new StringReader(usuariosDto))
+                {
+                    UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
+
+                    _usuarioRepository.AtualizarUsuario(
+                       usuarioXmlToJson.Nome,
+                       usuarioXmlToJson.DtNasc.ToString("yyyy-MM-dd"),
+                       codigo
+                    );
+                }
+            }
         }
 
         public async Task DeletarUsuario(Guid codigo)

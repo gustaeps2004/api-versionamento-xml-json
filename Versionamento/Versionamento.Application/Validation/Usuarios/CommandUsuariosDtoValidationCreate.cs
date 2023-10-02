@@ -19,8 +19,11 @@ namespace Versionamento.Application.Validation.Usuarios
             RuleFor(x => x.DocumentoFederal)
                 .NotNull()
                 .NotEmpty()
-                .Must(DocumentoFederal => DocumentoFederal.Length == 11 || DocumentoFederal.Length == 14)
                 .WithMessage("Documento federal é obrigatório");
+
+            RuleFor(x => x.DocumentoFederal)
+                .Must(DocumentoFederal => DocumentoFederal.Length == 11 || DocumentoFederal.Length == 14)
+                .WithMessage("Documento federal incorreto, digite apenas cpf ou cnpj");
 
             RuleFor(x => x.DtNasc)
                 .NotNull()
