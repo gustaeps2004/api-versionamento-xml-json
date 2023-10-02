@@ -15,7 +15,11 @@ namespace Versionamento.Application.Usuarios.Handlers
 
         public async Task<Domain.Entities.Usuarios> Handle(GetUsuarioByCodigoQuery request, CancellationToken cancellationToken)
         {
-            return await _repository.GetByCodigo(request.Codigo);
+            var usuario = await _repository.GetByCodigo(request.Codigo);
+            if (usuario is null)
+                throw new Exception("Código de usuário incorreto ou não usuário existe!");
+            
+            return usuario;
         }
     }
 }

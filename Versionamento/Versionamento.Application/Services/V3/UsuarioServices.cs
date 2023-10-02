@@ -108,7 +108,8 @@ namespace Versionamento.Application.Services.V3
 
         public async Task DeletarUsuario(Guid codigo)
         {
-            
+            var usuarioDeletarCommand = new UsuariosDeleteCommand(codigo) ?? throw new Exception("Entidade não pode ser carregada!");
+            await _mediator.Send(usuarioDeletarCommand);
         }
     }
 }
