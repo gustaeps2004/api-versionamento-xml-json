@@ -19,7 +19,7 @@ namespace Versionamento.Application.Validation.Usuarios
             RuleFor(x => x.DocumentoFederal)
                 .NotNull()
                 .NotEmpty()
-                .When(x => x.DocumentoFederal.Length != 11 && x.DocumentoFederal.Length != 14)
+                .Must(DocumentoFederal => DocumentoFederal.Length == 11 || DocumentoFederal.Length == 14)
                 .WithMessage("Documento federal é obrigatório");
 
             RuleFor(x => x.DtNasc)
