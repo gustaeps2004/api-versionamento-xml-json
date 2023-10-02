@@ -10,6 +10,15 @@ namespace Versionamento.Domain.Entities
         public string DocumentoFederal { get; private set; }
         public DateTime DtNasc { get; private set; }
 
+        public Usuarios(string nome, string documentoFederal, DateTime dtNasc)
+        {
+            ValidarPropriedades(nome, documentoFederal, dtNasc);
+
+            Nome = nome;
+            DocumentoFederal = documentoFederal;
+            DtNasc = dtNasc;
+        }
+
         public Usuarios(Guid codigo, string nome, string documentoFederal, DateTime dtNasc)
         {
             ValidarPropriedades(nome, documentoFederal, dtNasc);

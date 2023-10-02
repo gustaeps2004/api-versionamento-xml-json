@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces.V3;
+using Versionamento.Application.Usuarios.Commands;
 using Versionamento.Application.Usuarios.Queries;
 using Versionamento.Application.Validation.Usuarios;
 using Versionamento.Domain.Interfaces;
@@ -19,16 +20,13 @@ namespace Versionamento.Application.Services.V3
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
         private readonly IUsuarioRepository _usuarioRepository;
-        private readonly CommandUsuariosDtoValidationCreate _validationCreate;
         private readonly CommandUsuariosDtoValidationUpdate _validationUpdate;
 
-        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper, IMediator mediator,
-            CommandUsuariosDtoValidationCreate validationCreate, CommandUsuariosDtoValidationUpdate validationUpdate)
+        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper, IMediator mediator, CommandUsuariosDtoValidationUpdate validationUpdate)
         {
             _mapper = mapper;
             _mediator = mediator;
             _usuarioRepository = usuarioRepository;
-            _validationCreate = validationCreate;
             _validationUpdate = validationUpdate;
         }
 
@@ -74,9 +72,7 @@ namespace Versionamento.Application.Services.V3
             if (contentType != "application/xml")
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
-                await _validationCreate.ValidateAsync(newUsuariosDto);
-
-                _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(newUsuariosDto));
+                await _mediator.Send(_mapper.Map<UsuariosCreateCommand>(newUsuariosDto));
             }
             else
             {
@@ -84,9 +80,7 @@ namespace Versionamento.Application.Services.V3
                 using (TextReader reader = new StringReader(usuariosDto))
                 {
                     UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
-                    await _validationCreate.ValidateAsync(usuarioXmlToJson);
-
-                    _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(usuarioXmlToJson));
+                    await _mediator.Send(_mapper.Map<UsuariosCreateCommand>(usuarioXmlToJson));
                 }
             }
         }
