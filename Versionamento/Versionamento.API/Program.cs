@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using Versionamento.Infra.Ioc;
 
@@ -14,7 +15,13 @@ builder.Services.AddInfrastructureV1(builder.Configuration);
 builder.Services.AddInfrastructureV2();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "API V1", Version = "V1.0" });
+    options.SwaggerDoc("v2", new OpenApiInfo() { Title = "API V2", Version = "V2.0" });
+    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+    options.CustomSchemaIds(x => x.FullName);
+});
 
 var app = builder.Build();
 

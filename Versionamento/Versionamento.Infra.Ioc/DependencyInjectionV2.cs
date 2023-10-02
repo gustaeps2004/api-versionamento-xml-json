@@ -37,6 +37,7 @@ namespace Versionamento.Infra.Ioc
                 v.SubstituteApiVersionInUrl = true;
             });
 
+
             return services;
         }
     }
