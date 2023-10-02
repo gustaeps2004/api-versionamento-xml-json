@@ -9,6 +9,7 @@ namespace Versionamento.Application.Mappings
         public DtoToCommandMappingProfile()
         {
             CreateMap<UsuariosDto, UsuariosCreateCommand>();
+            CreateMap<UsuariosDto, UsuariosUpdateCommand>();
         }
     }
 }

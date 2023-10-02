@@ -19,15 +19,11 @@ namespace Versionamento.Application.Services.V3
     {
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
-        private readonly IUsuarioRepository _usuarioRepository;
-        private readonly CommandUsuariosDtoValidationUpdate _validationUpdate;
 
-        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper, IMediator mediator, CommandUsuariosDtoValidationUpdate validationUpdate)
+        public UsuarioServices(IUsuarioRepository usuarioRepository, IMapper mapper, IMediator mediator)
         {
             _mapper = mapper;
             _mediator = mediator;
-            _usuarioRepository = usuarioRepository;
-            _validationUpdate = validationUpdate;
         }
 
         public async Task<object> GetAll(string contentType)
@@ -87,19 +83,15 @@ namespace Versionamento.Application.Services.V3
 
         public async Task AtualizarUsuario(string usuariosDto, Guid codigo, string contentType)
         {
-            if (await _usuarioRepository.GetByCodigo(codigo) is null)
+            if (await GetByCodigo(codigo, "application/json") is null)
                 throw new Exception("Usuário não encontrado");
 
             if (contentType != "application/xml")
-            {
+            {                
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
-                await _validationUpdate.ValidateAsync(newUsuariosDto);
+                newUsuariosDto.Codigo = codigo;
 
-                _usuarioRepository.AtualizarUsuario(
-                    newUsuariosDto.Nome,
-                    newUsuariosDto.DtNasc.ToString("yyyy-MM-dd"),
-                    codigo
-                );
+                await _mediator.Send(_mapper.Map<UsuariosUpdateCommand>(newUsuariosDto));                
             }
             else
             {
@@ -107,23 +99,16 @@ namespace Versionamento.Application.Services.V3
                 using (TextReader reader = new StringReader(usuariosDto))
                 {
                     UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
-                    await _validationUpdate.ValidateAsync(usuarioXmlToJson);
+                    usuarioXmlToJson.Codigo = codigo;
 
-                    _usuarioRepository.AtualizarUsuario(
-                       usuarioXmlToJson.Nome,
-                       usuarioXmlToJson.DtNasc.ToString("yyyy-MM-dd"),
-                       codigo
-                    );
+                    await _mediator.Send(_mapper.Map<UsuariosUpdateCommand>(usuarioXmlToJson));
                 }
             }
         }
 
         public async Task DeletarUsuario(Guid codigo)
         {
-            if (await _usuarioRepository.GetByCodigo(codigo) is null)
-                throw new Exception("Usuário não encontrado");
-
-            _usuarioRepository.DeletarUsuario(codigo);
+            
         }
     }
 }
