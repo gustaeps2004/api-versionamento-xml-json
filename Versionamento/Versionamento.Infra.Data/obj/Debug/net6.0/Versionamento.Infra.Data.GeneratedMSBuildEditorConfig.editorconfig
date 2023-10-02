@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Versionamento.Infra.Data
-build_property.ProjectDir = C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\
+build_property.ProjectDir = C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.Infra.Data\

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj": {}
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj": {}
   },
   "projects": {
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj": {
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
+        "projectUniqueName": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
         "projectName": "Versionamento.API",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
-        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\obj\\",
+        "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\Versionamento.API.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj"
               }
             }
           }
@@ -44,14 +49,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.Versioning": {
-              "target": "Package",
-              "version": "[5.1.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
-              "target": "Package",
-              "version": "[5.1.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -76,21 +73,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj": {
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj",
+        "projectUniqueName": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj",
         "projectName": "Versionamento.Application",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj",
-        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\obj\\",
+        "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -104,8 +105,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
               }
             }
           }
@@ -123,6 +124,14 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.7.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.1.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -145,21 +154,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
+        "projectUniqueName": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
         "projectName": "Versionamento.Domain",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
-        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\obj\\",
+        "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,21 +213,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
+        "projectUniqueName": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
         "projectName": "Versionamento.Infra.Data",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
-        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\obj\\",
+        "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -228,8 +245,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
               }
             }
           }
@@ -277,21 +294,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj": {
+    "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj",
+        "projectUniqueName": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj",
         "projectName": "Versionamento.Infra.Ioc",
-        "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj",
-        "packagesPath": "C:\\Users\\Dev\\.nuget\\packages\\",
-        "outputPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\obj\\",
+        "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -305,14 +326,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Application\\Versionamento.Application.csproj"
               },
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Domain\\Versionamento.Domain.csproj"
               },
-              "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
-                "projectPath": "C:\\temp\\PessoalVersionamentoAPI\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj"
+              "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj": {
+                "projectPath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Data\\Versionamento.Infra.Data.csproj"
               }
             }
           }
@@ -330,6 +351,18 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.1.0, )"
             }
           },
           "imports": [
@@ -348,7 +381,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

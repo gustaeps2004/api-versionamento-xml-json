@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Serialization;
 using Versionamento.Infra.Ioc;
 
@@ -11,20 +10,8 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddControllers()
     .AddXmlSerializerFormatters();
 
-builder.Services.AddApiVersioning(setup =>
-{
-    setup.DefaultApiVersion = new ApiVersion(1, 0);
-    setup.AssumeDefaultVersionWhenUnspecified = true;
-    setup.ReportApiVersions = true;
-});
-
-builder.Services.AddVersionedApiExplorer(v =>
-{
-    v.GroupNameFormat = "'v'VVV";
-    v.SubstituteApiVersionInUrl = true;
-});
-
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrastructureV1(builder.Configuration);
+builder.Services.AddInfrastructureV2();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
