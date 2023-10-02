@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Versionamento.Application.DTOs;
 using Versionamento.Application.Interfaces.V3;
 
 namespace Versionamento.API.Controllers.V3
@@ -16,6 +17,7 @@ namespace Versionamento.API.Controllers.V3
             _usuariosServices = services;
         }
 
+
         [HttpGet("GetAll")]
         public async Task<ActionResult<object>> GetAll()
         {
@@ -25,7 +27,7 @@ namespace Versionamento.API.Controllers.V3
 
                 var usuarios = await _usuariosServices.GetAll(contentType);
                 if (usuarios is null)
-                    return BadRequest();
+                    return BadRequest();                
 
                 return Ok(usuarios);
 

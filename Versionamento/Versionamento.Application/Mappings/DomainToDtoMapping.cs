@@ -8,7 +8,7 @@ namespace Versionamento.Application.Mappings
     {
         public DomainToDtoMapping()
         {
-            CreateMap<Usuarios, UsuariosDto>().ReverseMap(); 
+            CreateMap<Domain.Entities.Usuarios, UsuariosDto>().ReverseMap(); 
         }
     }
 }
