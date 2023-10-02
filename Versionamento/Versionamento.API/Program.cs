@@ -3,7 +3,6 @@ using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using Versionamento.Infra.Ioc;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -20,9 +19,19 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "API Version 1", Version = "v1" });
-    options.SwaggerDoc("v2", new OpenApiInfo() { Title = "API Version 2", Version = "v2" });
-    //options.OperationFilter<CustomizacaoHeaderSwagger>();
+    options.SwaggerDoc("v1", new OpenApiInfo() 
+    { 
+        Title = "API Version 1", 
+        Version = "v1",
+        Description = "API Version 1, não contém validaçãoes para criação e edição de usuário!"
+    });
+
+    options.SwaggerDoc("v2", new OpenApiInfo() 
+    { 
+        Title = "API Version 2", 
+        Version = "v2",
+        Description = "API Version 2, contém validações para a criação e edição de usuário!"
+    });
 
     options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
     options.CustomSchemaIds(x => x.FullName);
