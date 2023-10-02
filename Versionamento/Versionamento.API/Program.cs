@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 using Versionamento.Infra.Ioc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,13 +17,24 @@ builder.Services.AddInfrastructureV1(builder.Configuration);
 builder.Services.AddInfrastructureV2();
 
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "API V1", Version = "V1.0" });
-    options.SwaggerDoc("v2", new OpenApiInfo() { Title = "API V2", Version = "V2.0" });
+    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "API Version 1", Version = "v1" });
+    options.SwaggerDoc("v2", new OpenApiInfo() { Title = "API Version 2", Version = "v2" });
+    //options.OperationFilter<CustomizacaoHeaderSwagger>();
+
     options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
     options.CustomSchemaIds(x => x.FullName);
 });
+
+builder.Services.AddApiVersioning(options =>
+{
+    options.ReportApiVersions = true;
+    options.Conventions.Controller<Versionamento.API.Controllers.V1.UsuariosController>().HasApiVersion(new ApiVersion(1, 0));
+    options.Conventions.Controller<Versionamento.API.Controllers.V2.UsuariosController>().HasApiVersion(new ApiVersion(2, 0));
+});
+
 
 var app = builder.Build();
 
@@ -30,7 +43,11 @@ app.UseApiVersioning();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint($"/swagger/v1/swagger.json", "v1");
+        options.SwaggerEndpoint($"/swagger/v2/swagger.json", "v2");
+    });
 }
 
 app.UseHttpsRedirection();

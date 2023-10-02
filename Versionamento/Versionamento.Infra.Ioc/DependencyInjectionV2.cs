@@ -24,13 +24,14 @@ namespace Versionamento.Infra.Ioc
                     fv.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                 });
 
-            services.AddApiVersioning(setup =>
-            {
-                setup.DefaultApiVersion = new ApiVersion(1, 0);
-                setup.AssumeDefaultVersionWhenUnspecified = true;
-                setup.ReportApiVersions = true;
-            });
+            //services.AddApiVersioning(setup =>
+            //{
+            //    setup.DefaultApiVersion = new ApiVersion(1, 0);
+            //    setup.AssumeDefaultVersionWhenUnspecified = true;
+            //    setup.ReportApiVersions = true;
+            //});
 
+            
             services.AddVersionedApiExplorer(v =>
             {
                 v.GroupNameFormat = "'v'VVV";

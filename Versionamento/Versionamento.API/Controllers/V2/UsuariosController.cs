@@ -5,8 +5,8 @@ namespace Versionamento.API.Controllers.V2
 {
 
     [ApiController]
-    [ApiVersion("2.0")]
-    [ApiExplorerSettings(GroupName = "V2")]
+    [ApiVersion("2")]
+    [ApiExplorerSettings(GroupName = "v2")]
     [Route("v{version:apiVersion}/[controller]")]
     public class UsuariosController : ControllerBase
     {
