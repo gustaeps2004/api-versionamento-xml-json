@@ -14,34 +14,17 @@ builder.Services.AddControllers()
 
 builder.Services.AddInfrastructureV1(builder.Configuration);
 builder.Services.AddInfrastructureV2();
+builder.Services.AddInfrastructureV3();
 
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo() 
-    { 
-        Title = "API Version 1", 
-        Version = "v1",
-        Description = "API Version 1, não contém validaçãoes para criação e edição de usuário!"
-    });
-
-    options.SwaggerDoc("v2", new OpenApiInfo() 
-    { 
-        Title = "API Version 2", 
-        Version = "v2",
-        Description = "API Version 2, contém validações para a criação e edição de usuário!"
-    });
-
-    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
-    options.CustomSchemaIds(x => x.FullName);
-});
-
+builder.Services.AddConfigSwagger();
 builder.Services.AddApiVersioning(options =>
 {
     options.ReportApiVersions = true;
     options.Conventions.Controller<Versionamento.API.Controllers.V1.UsuariosController>().HasApiVersion(new ApiVersion(1, 0));
     options.Conventions.Controller<Versionamento.API.Controllers.V2.UsuariosController>().HasApiVersion(new ApiVersion(2, 0));
+    options.Conventions.Controller<Versionamento.API.Controllers.V3.UsuariosController>().HasApiVersion(new ApiVersion(3, 0));
 });
 
 
@@ -56,6 +39,7 @@ if (app.Environment.IsDevelopment())
     {
         options.SwaggerEndpoint($"/swagger/v1/swagger.json", "v1");
         options.SwaggerEndpoint($"/swagger/v2/swagger.json", "v2");
+        options.SwaggerEndpoint($"/swagger/v3/swagger.json", "v3");
     });
 }
 

@@ -1028,6 +1028,7 @@
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
           "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": "5.1.0",
+          "Swashbuckle.AspNetCore": "6.2.3",
           "Versionamento.Application": "1.0.0",
           "Versionamento.Domain": "1.0.0",
           "Versionamento.Infra.Data": "1.0.0"
