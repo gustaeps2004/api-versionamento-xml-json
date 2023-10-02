@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mTY9ZtlyztODNmQY677logON9dTGTO1J/qCuwvf1PkL+Sl+11UmVwcAsDvbhrUaxpXFBhlJ0ni3zfrlLYtyEPw==",
+  "dgSpecHash": "m2REOSIbfqScNodNUGyuJT/3kf93svxAecbs3g7a7ig+PCk1rnWhKliaaazFsQnJ3qE+kqHR6Pthoo5ihSEABw==",
   "success": true,
   "projectFilePath": "C:\\temp\\APIVersionamento\\api-versionamento-xml-json\\Versionamento\\Versionamento.Infra.Ioc\\Versionamento.Infra.Ioc.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
