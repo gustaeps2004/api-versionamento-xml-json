@@ -21,7 +21,7 @@ namespace Versionamento.Application.Validation.Usuarios
                 .NotEmpty()
                 .WithMessage("Data de nascimento é obrigatório");
 
-            return ValidateAsync(context, cancellation);
+            return Validator(context, cancellation);
         }
     }
 }

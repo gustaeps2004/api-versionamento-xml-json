@@ -94,6 +94,7 @@ namespace Versionamento.Application.Services.V2
             if (contentType != "application/xml")
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
+                await _validationUpdate.ValidateAsync(newUsuariosDto);
 
                 _usuarioRepository.AtualizarUsuario(
                     newUsuariosDto.Nome,
@@ -107,6 +108,7 @@ namespace Versionamento.Application.Services.V2
                 using (TextReader reader = new StringReader(usuariosDto))
                 {
                     UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
+                    await _validationUpdate.ValidateAsync(usuarioXmlToJson);
 
                     _usuarioRepository.AtualizarUsuario(
                        usuarioXmlToJson.Nome,
@@ -119,7 +121,10 @@ namespace Versionamento.Application.Services.V2
 
         public async Task DeletarUsuario(Guid codigo)
         {
+            if (await _usuarioRepository.GetByCodigo(codigo) is null)
+                throw new Exception("Usuário não encontrado");
 
+            _usuarioRepository.DeletarUsuario(codigo);
         }
     }
 }
