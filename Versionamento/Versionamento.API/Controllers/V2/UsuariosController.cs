@@ -4,7 +4,9 @@ using Versionamento.Application.Interfaces.V2;
 namespace Versionamento.API.Controllers.V2
 {
 
-    [ApiController, ApiVersion("2")]
+    [ApiController]
+    [ApiVersion("2")]
+    [ApiExplorerSettings(GroupName = "v2")]
     [Route("v{version:apiVersion}/[controller]")]
     public class UsuariosController : ControllerBase
     {

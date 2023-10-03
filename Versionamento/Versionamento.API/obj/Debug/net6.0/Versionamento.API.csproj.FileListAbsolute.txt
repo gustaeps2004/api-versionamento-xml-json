@@ -159,3 +159,8 @@ C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.dll
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\temp\APIVersionamento\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\MediatR.dll
+C:\temp\PessoalVersionamentoAPI\api-versionamento-xml-json\Versionamento\Versionamento.API\bin\Debug\net6.0\MediatR.Contracts.dll

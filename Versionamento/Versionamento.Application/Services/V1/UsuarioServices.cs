@@ -64,7 +64,7 @@ namespace Versionamento.Application.Services.V1
             {
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
 
-                _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(newUsuariosDto));
+                _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(newUsuariosDto));
             }
             else
             {
@@ -73,7 +73,7 @@ namespace Versionamento.Application.Services.V1
                 {
                     UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
 
-                    _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuarioXmlToJson));
+                    _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(usuarioXmlToJson));
                 }
             }
         }

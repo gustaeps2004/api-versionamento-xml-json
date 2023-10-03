@@ -23,19 +23,13 @@ namespace Versionamento.Infra.Ioc
                     fv.RegisterValidatorsFromAssemblyContaining<CommandUsuariosDtoValidationUpdate>();
                     fv.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                 });
-
-            services.AddApiVersioning(setup =>
-            {
-                setup.DefaultApiVersion = new ApiVersion(1, 0);
-                setup.AssumeDefaultVersionWhenUnspecified = true;
-                setup.ReportApiVersions = true;
-            });
-
+            
             services.AddVersionedApiExplorer(v =>
             {
                 v.GroupNameFormat = "'v'VVV";
                 v.SubstituteApiVersionInUrl = true;
             });
+
 
             return services;
         }

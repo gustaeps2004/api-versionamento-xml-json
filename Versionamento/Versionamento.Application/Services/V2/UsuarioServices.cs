@@ -71,7 +71,7 @@ namespace Versionamento.Application.Services.V2
                 var newUsuariosDto = JsonConvert.DeserializeObject<UsuariosDto>(usuariosDto.ToString());
                 await _validationCreate.ValidateAsync(newUsuariosDto);
 
-                _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(newUsuariosDto));
+                _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(newUsuariosDto));
             }
             else
             {
@@ -81,7 +81,7 @@ namespace Versionamento.Application.Services.V2
                     UsuariosDto usuarioXmlToJson = (UsuariosDto)serializer.Deserialize(reader);
                     await _validationCreate.ValidateAsync(usuarioXmlToJson);
 
-                    _usuarioRepository.CriarUsuario(_mapper.Map<Usuarios>(usuarioXmlToJson));
+                    _usuarioRepository.CriarUsuario(_mapper.Map<Domain.Entities.Usuarios>(usuarioXmlToJson));
                 }
             }
         }
